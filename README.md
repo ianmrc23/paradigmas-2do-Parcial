@@ -92,7 +92,7 @@ python3 main.py
 
 ### 4. Validación de Entradas, Excepciones e Información Variada:
 
-- Al crear un nuevo cliente, no están validadas las entradas por falta de tiempo.
+- Al crear un nuevo cliente, no están validadas todas las entradas, solo las que darán error.
 - Todas las entradas a partir del menú principal proporcionadas por el usuario son validadas
   para garantizar la integridad de los datos.
 - Si comete un error al ingresar una opción, el programa le solicitará que ingrese
