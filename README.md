@@ -58,6 +58,53 @@ rm -rf .git
 python3 main.py
 ```
 
+## Especificaciones:
+
+### 1. Interfaz de Usuario Intuitiva:
+
+- El programa está diseñado con una interfaz de usuario intuitiva y fácil de usar.
+- Se utilizan opciones numéricas en todos los menús para facilitar la navegación.
+- En las opciones de eliminar productos, se pide confirmación y se espera `y/n`.
+
+### 2. Selección de Opciones:
+
+- Para seleccionar una opción, simplemente ingrese el número correspondiente a esa opción
+  y presione `Return`.
+- Si ingresa un valor incorrecto o inesperado, el programa le brindará la oportunidad de
+  corregirlo y seleccionar una opción válida.
+
+### 3. Menús Disponibles:
+
+- Menú de Inicio de Sesión:
+  El cliente puede registrarse si no cuenta con un usuario o iniciar sesión si ya lo tiene.
+- Menú Principal:
+  Este menú le permite acceder a diferentes partes del programa, como ver y añadir un producto,
+  administrar el carrito de compras, realizar el pago, ver la información del cliente o salir.
+- Menú Añadir Producto:
+  Aquí puede explorar las diferentes categorías de productos disponibles y los productos en
+  la dicha categoría para la compra.
+- Menú del Carrito de Compras:
+  Permite ver los productos agregados al carrito, eliminar productos individuales o vaciar completamente el carrito.
+- Menú de Pago:
+  Ofrece opciones para pagar su compra, incluido el pago en efectivo, con tarjeta o a través de un código QR.
+- Menú de Perfil:
+  Una forma rápida de ver la información del cliente.
+
+### 4. Validación de Entradas, Excepciones e Información Variada:
+
+- Al crear un nuevo cliente, no están validadas las entradas por falta de tiempo.
+- Todas las entradas a partir del menú principal proporcionadas por el usuario son validadas
+  para garantizar la integridad de los datos.
+- Si comete un error al ingresar una opción, el programa le solicitará que ingrese
+  nuevamente una opción válida.
+- El archivo `main.py` puede ser ejecutado desde cualquier parte, ya que se ha implementado
+  la librería `os` para obtener la ruta absoluta del ejecutable y así evitar errores al
+  intentar 1cargar los archivos .pickle.
+- Se ha controlado la excepción de interrupción por teclado `KeyboardInterrupt`,
+  o mejor dicho `ctrl + c`, para mostrar un mensaje más amigable y menos invasivo que el original.
+- También se capturan errores inesperados con un mensaje personalizado y el error
+  para evitar mostrar un error extenso.
+
 ## Uso del Programa
 
 ### Guía Rápida de Indicadores
@@ -71,8 +118,8 @@ python3 main.py
 ### Mensajes Comunes:
 
 ```sh
-[*] Press RETURN to continue: Para continuar, presiona la tecla RETURN.
-[-] Invalid choice. Please enter a valid option: Ocurre cuando el valor introducido no es aceptado.
+[*] Press RETURN to continue:
+[-] Invalid choice. Please enter a valid option:
 ```
 
 ### Primera Ejecución
@@ -84,7 +131,8 @@ Si es la primera vez que ejecutas el programa verás algo así:
 [*] Press RETURN to continue
 ```
 
-Esto ocurre ya que no se encontró el archivo `inventory.pickle` que sirve para la persistencia de datos de los productos, por lo tanto se crea uno nuevo.
+Esto ocurre ya que no se encontró el archivo `inventory.pickle` que sirve para la persistencia
+de datos de los productos, por lo tanto se crea uno nuevo.
 
 Después aparecerá el banner auspiciado por ChatGPT.
 
@@ -171,7 +219,8 @@ Se nos mostrarán las categorías disponibles, y una vez más elegimos una de la
 ╚════╩═══════════════════════════╩═══════╩═══════════╝
 ```
 
-Esta vez se muestran los productos con su stock disponible y precio de la categoría seleccionada. Ahora elige qué producto agregar a tu carrito:
+Esta vez se muestran los productos con su stock disponible y precio de la categoría seleccionada.
+Ahora elige qué producto agregar a tu carrito:
 
 ```sh
 [*] Enter the ID of the product you want or 0 to go back: 1
@@ -179,9 +228,9 @@ Esta vez se muestran los productos con su stock disponible y precio de la catego
 [+] 20 Apple's have been added to your cart.
 ```
 
-Ahora elige `0` dos veces para volver al menú principal.
+Ingrese `0` para volver y de nuevo otro `0` para volver al menú principal.
 
-Si quieres ver tu información, elige la opción 4 y verás algo así:
+Si quieres ver tu información, elige la opción `4` y verás algo así:
 
 ```sh
 ╔════════════════════════════════════════════════════╗
@@ -231,7 +280,8 @@ Si quieres ver los productos en tu carrito, elige la opción `1`:
 
 Eliminar un producto específico? Opción `2`. Eliminar todos los productos? Opción `3`.
 
-Por último, veremos el `checkout`, que es la opción `3` del menú principal. Tendrás 3 tipos de pago para elegir:
+Por último, veremos el `checkout`, que es la opción `3` del menú principal.
+Tendrás tres tipos de pago para elegir:
 
 ```sh
 ╔════════════════════════════════════════════════════╗
@@ -243,7 +293,7 @@ Por último, veremos el `checkout`, que es la opción `3` del menú principal. T
 ╚════════════════════════════════════════════════════╝
 ```
 
-Y 3 tipos de envío:
+Y tres tipos de envío:
 
 ```sh
 ╔════════════════════════════════════════════════════╗
