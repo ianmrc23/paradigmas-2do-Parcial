@@ -14,6 +14,10 @@ from schemas.polymorphism import (
 
 
 def check_out_menu(client: Client):
+    if not client.cart:
+        print("\n\n[+] Your cart is empty.")
+        return
+
     total_amount, total_weight = client.calculate_totals()
     total_products = len(client.cart)
     distance = client.client_distance_from_store

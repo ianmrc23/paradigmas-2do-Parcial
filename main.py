@@ -1,10 +1,10 @@
-from components.add_product import add_product_menu
+from components.add_menu import add_product_menu
 from auth.auth import login_user, register_new_user
 from components.cart_menu import cart_menu
 from components.check_menu import check_out_menu
 from db.db_init import db_main
 from utils.menu_table import auth_menu, show_main_menu, welcome_banner
-from utils.os_utils import farewell_message, file_exists, invalid_choice, wait_for_key
+from utils.os_utils import clear_screen, farewell_message, file_exists, invalid_choice, wait_for_key
 
 
 def main_menu():
@@ -69,7 +69,9 @@ def user_menu(client):
 
         # Profile
         elif choice == "4":
+            clear_screen()
             client.display_info()
+            wait_for_key()
 
         # Exit
         elif choice == "5":
