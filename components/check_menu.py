@@ -46,7 +46,6 @@ def check_out_menu(client: Client):
 
     client.cart.clear()
     save_pickle_file(client, f"{client.client_email}.pickle")
-    wait_for_key()
 
 
 def select_payment_method(client: Client):

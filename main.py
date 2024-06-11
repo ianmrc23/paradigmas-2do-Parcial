@@ -39,13 +39,13 @@ def main_menu():
 
     # ctrl + c
     except KeyboardInterrupt:
-        print("\n\n[!] Program cancelled. Goodbye!\n\n")
+        print("\n\n[-] Program cancelled. Goodbye!\n\n")
         exit(0)
 
     # Unexpected error
     except Exception as error:
-        print("\n\n[!] Oops! An unexpected error has occurred.")
-        print(f"\n\n[!] Error: {error} \n\n")
+        print("\n\n[-] Oops! An unexpected error has occurred.")
+        print(f"\n\n[-] Error: {error} \n\n")
         exit(1)
 
 
@@ -66,6 +66,8 @@ def user_menu(client):
         # Check Out
         elif choice == "3":
             check_out_menu(client)
+            wait_for_key()
+            
 
         # Profile
         elif choice == "4":

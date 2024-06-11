@@ -31,7 +31,7 @@ def register_new_user():
                 raise ValueError("\n\n[-] ID must be a positive integer.")
             break
         except ValueError as e:
-            print(f"[-] Error: {e}")
+            print(f"\n\n[-] Error: {e}")
     client_name = input("\n\n[*] Enter your name: ")
     client_email = input("\n\n[*] Enter your email: ")
     client_password = input("\n\n[*] Enter your password: ")
@@ -46,7 +46,7 @@ def register_new_user():
                 raise ValueError(
                     "\n\n[-] Distance must be a non-negative number.")
         except ValueError as e:
-            print(f"[-] Error: {e}")
+            print(f"\n\n[-] Error: {e}")
 
     new_client = Client(
         client_id=client_id,
