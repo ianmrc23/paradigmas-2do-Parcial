@@ -3,6 +3,9 @@ from utils.os_utils import clear_screen, get_main_dir, load_pickle_file, save_pi
 
 
 def read_inventory():
+    """
+    Lee el archivo de inventario y crea un diccionario de categorías con sus respectivos productos.
+    """
     categories = {}
 
     with open(get_main_dir("db/inventory.txt"), "r") as file:
@@ -40,6 +43,9 @@ def read_inventory():
 
 
 def print_inventory():
+    """
+    Carga el inventario desde un archivo pickle y muestra las categorías y productos en un formato legible.
+    """
     categories = load_pickle_file("inventory.pickle")
     clear_screen()
     print(f"{'═' * 100}")
@@ -56,7 +62,9 @@ def print_inventory():
 
 
 def db_main():
+    """
+    Lee el inventario desde un archivo de texto, lo guarda en un archivo pickle y notifica al usuario.
+    """
     categories = read_inventory()
-
     save_pickle_file(categories, "inventory.pickle")
     print("\n\n[+] Inventory data has been saved as inventory.pickle")

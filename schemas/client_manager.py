@@ -9,6 +9,19 @@ from utils.os_utils import (
 
 
 class Client:
+    """
+    Representa un cliente de la tienda.
+
+    Attributes:
+        client_id (int): El ID del cliente.
+        client_name (str): El nombre del cliente.
+        client_email (str): El email del cliente.
+        client_password (str): La contraseña del cliente.
+        client_address (str): La dirección del cliente.
+        client_distance_from_store (float): La distancia del cliente a la tienda.
+        cart (List[dict]): El carrito de compras del cliente.
+    """
+
     def __init__(
         self,
         client_id: int,
@@ -27,6 +40,9 @@ class Client:
         self.cart: List[dict] = []
 
     def display_info(self):
+        """
+        Muestra la información del cliente.
+        """
         print(f"╔{'═' * 52}╗")
         print(f"║" + "CLIENT INFORMATION".center(52) + "║")
         print("╠════════════════════╦═══════════════════════════════╣")
@@ -40,6 +56,9 @@ class Client:
         print("╚════════════════════╩═══════════════════════════════╝")
 
     def calculate_totals(self):
+        """
+        Calcula el precio total y el peso total de los productos en el carrito.
+        """
         total_price: float = 0.0
         total_weight: float = 0.0
 
@@ -53,6 +72,9 @@ class Client:
         return total_price, total_weight
 
     def view_cart(self):
+        """
+        Muestra el contenido del carrito del cliente.
+        """
         if not self.cart:
             print("\n\n[+] Your cart is empty.")
             return
@@ -78,11 +100,13 @@ class Client:
         print(f"╚{'═' * 52}╝")
 
     def add_to_cart(self, product, quantity):
+        """
+        Agrega un producto al carrito del cliente.
+        """
         for item in self.cart:
             if item["product"].product_id == product.product_id:
                 item["quantity"] += quantity
                 break
-
         else:
             cart_item = {"product": product, "quantity": quantity}
             self.cart.append(cart_item)
@@ -90,6 +114,9 @@ class Client:
         save_pickle_file(self, f"{self.client_email}.pickle")
 
     def remove_product(self):
+        """
+        Elimina un producto del carrito del cliente.
+        """
         if not self.cart:
             print("\n\n[*] Your cart is already empty.")
             return
@@ -125,7 +152,6 @@ class Client:
                                     break
 
                         save_pickle_file(categories, "inventory.pickle")
-
                         save_pickle_file(self, f"{self.client_email}.pickle")
 
                         print(
@@ -143,6 +169,9 @@ class Client:
                 invalid_choice()
 
     def clear_cart(self):
+        """
+        Vacía el carrito del cliente.
+        """
         if not self.cart:
             print("\n\n[*] Your cart is already empty.")
             return
@@ -179,6 +208,9 @@ class Client:
 
 
 def print_product_table(cart):
+    """
+    Imprime una tabla con los productos en el carrito.
+    """
     print(f"╔{'═' * 52}╗")
     print(f"║" + "YOUR CART".center(52) + "║")
     print("╠════════════════════╦═══════════════════════════════╣")

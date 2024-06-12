@@ -8,11 +8,14 @@ from utils.os_utils import clear_screen, farewell_message, file_exists, invalid_
 
 
 def main_menu():
+    """
+    Controla el flujo principal del programa, gestionando la autenticación y el acceso al menú de usuario.
+    """
     try:
-        welcome_banner()
+        welcome_banner()  # Muestra el banner de bienvenida
 
         while True:
-            auth_menu()
+            auth_menu()  # Muestra el menú de autenticación
 
             choice = input(f"\n\n[*] Enter the NUMBER of your choice: ")
 
@@ -37,12 +40,12 @@ def main_menu():
             else:
                 invalid_choice()
 
-    # ctrl + c
+    # Handle ctrl + c interruption
     except KeyboardInterrupt:
         print("\n\n[-] Program cancelled. Goodbye!\n\n")
         exit(0)
 
-    # Unexpected error
+    # Handle unexpected errors
     except Exception as error:
         print("\n\n[-] Oops! An unexpected error has occurred.")
         print(f"\n\n[-] Error: {error} \n\n")
@@ -50,36 +53,34 @@ def main_menu():
 
 
 def user_menu(client):
-    while True:
-        show_main_menu()
-        choice = input(
-            f"\n\n[*] Enter the NUMBER of your choice: ")
+    """
+    Muestra el menú principal del usuario y maneja las selecciones del usuario.
 
-        # Add product
+    Args:
+        client (Client): El objeto cliente que ha iniciado sesión.
+    """
+    while True:
+        show_main_menu()  # Muestra el menú principal
+        choice = input(f"\n\n[*] Enter the NUMBER of your choice: ")
+
         if choice == "1":
             add_product_menu(client)
 
-        # My cart
         elif choice == "2":
             cart_menu(client)
 
-        # Check Out
         elif choice == "3":
             check_out_menu(client)
             wait_for_key()
-            
 
-        # Profile
         elif choice == "4":
             clear_screen()
             client.display_info()
             wait_for_key()
 
-        # Exit
         elif choice == "5":
             farewell_message()
 
-        # Invalid choice
         else:
             invalid_choice()
 

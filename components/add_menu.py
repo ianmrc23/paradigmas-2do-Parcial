@@ -8,6 +8,9 @@ from utils.os_utils import (
 
 
 def add_product_menu(client):
+    """
+    Muestra el menú para añadir productos al carrito del cliente.
+    """
     categories = load_pickle_file("inventory.pickle")
 
     while True:
@@ -33,6 +36,9 @@ def add_product_menu(client):
 
 
 def show_products(categories, selected_category, client):
+    """
+    Muestra los productos disponibles en la categoría seleccionada y permite añadirlos al carrito.
+    """
     while True:
         clear_screen()
         show_products_inCategory(selected_category)
@@ -63,6 +69,9 @@ def show_products(categories, selected_category, client):
 
 
 def add_product(categories, selected_product, client):
+    """
+    Añade el producto seleccionado al carrito del cliente.
+    """
     while True:
         choice = input(
             f"\n\n[*] Enter the number of {selected_product.product_name}'s you want or 0 to go back: ")
@@ -96,6 +105,9 @@ def add_product(categories, selected_product, client):
 
 
 def show_categories(categories):
+    """
+    Muestra las categorías disponibles.
+    """
     print(f"╔{'═' * 52}╗")
     print(f"║" + "AVAILABLE CATEGORIES".center(52) + "║")
     print(f"╠{'═' * 52}╣")
@@ -105,6 +117,9 @@ def show_categories(categories):
 
 
 def show_products_inCategory(selected_category):
+    """
+    Muestra los productos disponibles en una categoría específica.
+    """
     print(f"╔{'═' * 52}╗")
     print(
         f"║" + f"Category: {selected_category.category_name}".center(52) + "║")

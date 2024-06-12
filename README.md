@@ -58,53 +58,6 @@ rm -rf .git
 python3 main.py
 ```
 
-## Especificaciones:
-
-### 1. Interfaz de Usuario Intuitiva:
-
-- El programa está diseñado con una interfaz de usuario intuitiva y fácil de usar.
-- Se utilizan opciones numéricas en todos los menús para facilitar la navegación.
-- En las opciones de eliminar productos, se pide confirmación y se espera `y/n`.
-
-### 2. Selección de Opciones:
-
-- Para seleccionar una opción, simplemente ingrese el número correspondiente a esa opción
-  y presione `Return`.
-- Si ingresa un valor incorrecto o inesperado, el programa le brindará la oportunidad de
-  corregirlo y seleccionar una opción válida.
-
-### 3. Menús Disponibles:
-
-- Menú de Inicio de Sesión:
-  El cliente puede registrarse si no cuenta con un usuario o iniciar sesión si ya lo tiene.
-- Menú Principal:
-  Este menú le permite acceder a diferentes partes del programa, como ver y añadir un producto,
-  administrar el carrito de compras, realizar el pago, ver la información del cliente o salir.
-- Menú Añadir Producto:
-  Aquí puede explorar las diferentes categorías de productos disponibles y los productos en
-  la dicha categoría para la compra.
-- Menú del Carrito de Compras:
-  Permite ver los productos agregados al carrito, eliminar productos individuales o vaciar completamente el carrito.
-- Menú de Pago:
-  Ofrece opciones para pagar su compra, incluido el pago en efectivo, con tarjeta o a través de un código QR.
-- Menú de Perfil:
-  Una forma rápida de ver la información del cliente.
-
-### 4. Validación de Entradas, Excepciones e Información Variada:
-
-- Al crear un nuevo cliente, no están validadas todas las entradas, solo las que darán error.
-- Todas las entradas a partir del menú principal proporcionadas por el usuario son validadas
-  para garantizar la integridad de los datos.
-- Si comete un error al ingresar una opción, el programa le solicitará que ingrese
-  nuevamente una opción válida.
-- El archivo `main.py` puede ser ejecutado desde cualquier parte, ya que se ha implementado
-  la librería `os` para obtener la ruta absoluta del ejecutable y así evitar errores al
-  intentar 1cargar los archivos .pickle.
-- Se ha controlado la excepción de interrupción por teclado `KeyboardInterrupt`,
-  o mejor dicho `ctrl + c`, para mostrar un mensaje más amigable y menos invasivo que el original.
-- También se capturan errores inesperados con un mensaje personalizado y el error
-  para evitar mostrar un error extenso.
-
 ## Uso del Programa
 
 ### Guía Rápida de Indicadores

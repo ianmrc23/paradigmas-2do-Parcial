@@ -2,6 +2,9 @@ from utils.os_utils import clear_screen, wait_for_key
 
 
 def welcome_banner():
+    """
+    Muestra un banner de bienvenida y espera a que el usuario presione una tecla.
+    """
     clear_screen()
     banner = """
 ██╗    ██╗███████╗██╗      ██████╗ ██████╗ ███╗   ███╗███████╗
@@ -30,6 +33,9 @@ def welcome_banner():
 
 
 def auth_menu():
+    """
+    Muestra el menú de autenticación.
+    """
     clear_screen()
     print(f"╔{'═' * 52}╗")
     print(f"║" + "AUTH MENU".center(52) + "║")
@@ -41,6 +47,9 @@ def auth_menu():
 
 
 def show_main_menu():
+    """
+    Muestra el menú principal.
+    """
     clear_screen()
     print(f"╔{'═' * 52}╗")
     print(f"║" + "MAIN MENU".center(52) + "║")
@@ -54,6 +63,9 @@ def show_main_menu():
 
 
 def show_cart_menu():
+    """
+    Muestra el menú del carrito.
+    """
     print(f"╔{'═' * 52}╗")
     print(f"║" + "CART MENU".center(52) + "║")
     print(f"╠{'═' * 52}╣")
@@ -64,6 +76,9 @@ def show_cart_menu():
 
 
 def show_checkout():
+    """
+    Muestra el menú de checkout.
+    """
     print(f"╔{'═' * 52}╗")
     print(f"║" + "CHECKOUT MENU".center(52) + "║")
     print(f"╠{'═' * 52}╣")
@@ -74,6 +89,9 @@ def show_checkout():
 
 
 def show_shipping_methods():
+    """
+    Muestra los métodos de envío.
+    """
     print(f"╔{'═' * 52}╗")
     print(f"║" + "SHIPPING METHODS".center(52) + "║")
     print(f"╠{'═' * 52}╣")

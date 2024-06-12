@@ -1,6 +1,6 @@
 from multiprocessing.connection import Client
 from utils.menu_table import show_checkout, show_shipping_methods
-from utils.os_utils import clear_screen, invalid_choice, save_pickle_file, wait_for_key
+from utils.os_utils import clear_screen, invalid_choice, save_pickle_file
 from schemas.polymorphism import (
     CardPayment,
     CashPayment,
@@ -14,6 +14,9 @@ from schemas.polymorphism import (
 
 
 def check_out_menu(client: Client):
+    """
+    Muestra el menú de checkout, procesa el pago y selecciona el método de envío.
+    """
     if not client.cart:
         print("\n\n[+] Your cart is empty.")
         return
@@ -49,6 +52,9 @@ def check_out_menu(client: Client):
 
 
 def select_payment_method(client: Client):
+    """
+    Permite al usuario seleccionar un método de pago.
+    """
     while True:
         clear_screen()
         client.view_cart()
@@ -73,6 +79,9 @@ def select_payment_method(client: Client):
 
 
 def select_shipping_method(client: Client):
+    """
+    Permite al usuario seleccionar un método de envío.
+    """
     while True:
         clear_screen()
         client.view_cart()
